@@ -25,18 +25,18 @@ class TicTacToe
   end
 
   def position_taken?(pos)
-     board[pos]=="X" || board[pos]=="O"
+     @board[pos]=="X" || @board[pos]=="O"
   end
 
-  def valid_move?(board, pos)
-    (pos >= 0 && pos <=8) && !position_taken?(board, pos)
+  def valid_move?(pos)
+    (pos >= 0 && pos <=8) && !position_taken?(pos)
   end
 
-  def turn(board)
+  def turn
     puts "Please enter a number between 1-9:"
     number = input_to_index(gets.strip)
     if valid_move?(board, number)
-      move(board, number, current_player(board))
+      move(number, current_player)
       display_board(board)
     else
       turn(board)
