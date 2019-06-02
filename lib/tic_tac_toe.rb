@@ -23,7 +23,7 @@ class TicTacToe
   def move(pos, val)
     @board[pos] = val
   end
-  
+
   def position_taken?(pos)
      board[pos]=="X" || board[pos]=="O"
   end
