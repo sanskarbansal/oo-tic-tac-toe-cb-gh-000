@@ -62,19 +62,19 @@ class TicTacToe
 
   def won?(board)
     TicTacToe::WIN_COMBINATIONS.each do |win_comb|
-      if (win_comb.all? { |i| board[i] == "X"} || win_comb.all? { |i| board[i]=="O"})
+      if (win_comb.all? { |i| @board[i] == "X"} || win_comb.all? { |i| @board[i]=="O"})
         return win_comb
       end
     end
     return false
   end
 
-  def full?(board)
-    return board.all?{|el| !(el==nil || el == " ")}
+  def full?
+    return @board.all?{|el| !(el==nil || el == " ")}
   end
 
   def draw?(board)
-    full?(board) && !won?(board)
+    full? && !won?(board)
   end
 
   def over?(board)
