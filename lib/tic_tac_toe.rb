@@ -35,25 +35,25 @@ class TicTacToe
   def turn
     puts "Please enter a number between 1-9:"
     number = input_to_index(gets.strip)
-    if valid_move?(board, number)
+    if valid_move?() number)
       move(number, current_player)
-      display_board(board)
+      display_board
     else
       turn(board)
     end
   end
 
-  def turn_count(board)
+  def turn_count
     count = 0
-    board.each do |i|
+    @board.each do |i|
       if i == "X" || i == "O"
         count += 1
       end
     end
     return count
   end
-  def current_player(board)
-    n = turn_count(board)
+  def current_player
+    n = turn_count
     if n%2 == 0
       return "X"
     end
