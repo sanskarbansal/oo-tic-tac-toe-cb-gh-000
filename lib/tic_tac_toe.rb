@@ -81,8 +81,8 @@ class TicTacToe
     draw? || won?
   end
 
-  def winner(board)
-    WIN_COMBINATIONS.each do |win_comb|
+  def winner
+    TicTacToe::WIN_COMBINATIONS.each do |win_comb|
       if win_comb.all? { |i| board[i] == "X"}
         return "X"
       end
