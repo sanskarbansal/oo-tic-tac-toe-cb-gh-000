@@ -83,24 +83,24 @@ class TicTacToe
 
   def winner
     TicTacToe::WIN_COMBINATIONS.each do |win_comb|
-      if win_comb.all? { |i| board[i] == "X"}
+      if win_comb.all? { |i| @board[i] == "X"}
         return "X"
       end
-      if win_comb.all? { |i| board[i] == "O"}
+      if win_comb.all? { |i| @board[i] == "O"}
         return "O"
       end
     end
   return nil
   end
 
-  def play(board)
-    display_board(board)
-    over = over?(board)
+  def play
+    display_board
+    over = over?
     while !over
-      turn(board)
-      over = over?(board)
+      turn
+      over = over?
     end
-    if draw?(board)
+    if draw?
       puts "Cat's Game!"
     else
       puts "Congratulations #{winner(board)}!"
