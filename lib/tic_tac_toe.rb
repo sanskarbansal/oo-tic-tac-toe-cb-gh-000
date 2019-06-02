@@ -7,6 +7,7 @@ class TicTacToe
   def initialize
     @board = Array.new(9, " ")
   end
+  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -14,7 +15,6 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
-
   def input_to_index(index)
     index.to_i - 1
   end
